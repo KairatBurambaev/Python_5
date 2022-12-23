@@ -1,10 +1,10 @@
 desk = list(range(1,10))
 
 def print_desk(desk):
-   print("-" * 15)
+   print('-' * 15)
    for i in range(3):
-      print("[", desk[0+i*3], "][", desk[1+i*3], "][", desk[2+i*3], "]")
-      print("-" * 15)
+      print('[', desk[0+i*3], '][', desk[1+i*3], '][', desk[2+i*3], ']')
+      print('-' * 15)
 
 def inputM(move_it):
     while True:
@@ -12,7 +12,7 @@ def inputM(move_it):
             a = input(move_it + ' в клетку: ')
             a = int(a)
             if a >= 1 and a <= 9:
-                if(str(desk[a-1]) not in "XO"):
+                if(str(desk[a-1]) not in 'XO'):
                     desk[a-1] = move_it
                     return a
             else: print('Введите число от 1 до 9')
@@ -31,20 +31,20 @@ def game(desk):
     while True:
         print_desk(desk)
         if x % 2 == 1:
-           inputM("X")
+           inputM('X')
            x = x + 1
         else:
-           inputM("O")
+           inputM('O')
            x = x + 1
         if x > 4:
            XO = winner(desk)
            if XO:
-              print(XO, "выиграл!")
+              print(XO, 'Победили')
               win = True
               break
         if x == 9:
-            print("Ничья!")
+            print('Ничья')
             break
-            
+
     print_desk(desk)
 game(desk)
